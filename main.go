@@ -9,14 +9,17 @@ import {
 }
 
 const (
-	apiKey = os.Getenv(FORTNITE_TRACKER_API_KEY) // hehe obfuscated YOU HACKER
 	endpoint = "https://api.fortnitetracker.com/v1/profile/{platform}/{epic-name}" // get correct endpoint
 )
 
 func main(){
+	apiKey := os.Getenv("FORTNITE_TRACKER_API_KEY") // hehe obfuscated YOU HACKER
+    if apiKey == "" {
+        log.Fatal("FORTNITE_TRACKER_API_KEY environment variable not set")
+    }
+
 	client := resty.New()
 
-	// 
 	platform := "pc"
 	epicName := "pegasusfly_"
 
