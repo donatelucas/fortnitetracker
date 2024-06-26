@@ -9,7 +9,7 @@ import {
 }
 
 const (
-	apiKey = "MY KEY" // how do I obfuscate this?
+	apiKey = os.Getenv(FORTNITE_TRACKER_API_KEY) // hehe obfuscated YOU HACKER
 	endpoint = "https://api.fortnitetracker.com/v1/profile/{platform}/{epic-name}" // get correct endpoint
 )
 
